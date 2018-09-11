@@ -1,0 +1,23 @@
+{
+  "name": "prerender-recache",
+  "version": "1.0.0",
+  "description": "Reads a sitemap.xml, and sends all the URLS within to the recache endpoint on prerender.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "2.4.1",
+    "debug": "4.0.0",
+    "dotenv": "6.0.0",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}
