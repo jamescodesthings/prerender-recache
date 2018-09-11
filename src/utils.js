@@ -5,6 +5,8 @@ const Logger = require('./logger.js');
 
 const log = new Logger('utilities');
 
+const xmlFileRegex = /\.xml$/i;
+
 module.exports = {
   getFilenameFromURL: function (url) {
     log.debug(chalk.cyan('Getting filename from: ') + url);
@@ -12,14 +14,14 @@ module.exports = {
     const filenameRegex = /\/([\w\.]+)$/i;
 
     const match = filenameRegex.test(url);
-    log.debug(chalk.green('Match:'), match);
+    log.debug(chalk.cyan('Match:'), match);
 
     if(!match) return null;
 
     const result = filenameRegex.exec(url);
     if(!(result && typeof result === 'object' && result[1])) return null;
 
-    log.debug(chalk.green('Result:'), result[1]);
+    log.debug(chalk.cyan('Result:'), result[1]);
     return result[1];
   },
   makeDirectory: function (folder) {
@@ -70,5 +72,12 @@ module.exports = {
         process.exit(99);
       })
     });
+  },
+  /**
+   * Returns true if url is an XML file ending
+   * @param url
+   */
+  isXMLFile: function(url) {
+    return xmlFileRegex.test(url);
   }
 };

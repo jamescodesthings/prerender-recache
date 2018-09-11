@@ -1,4 +1,5 @@
 const Debug = require('debug');
+const chalk = require('chalk');
 const log = Debug('logger-service:info');
 
 const levels = [
@@ -14,7 +15,7 @@ class Logger {
 
     this.createLoggers();
 
-    log('Created Logger for: %s', namespace);
+    log(chalk.green('Created Logger for: %s'), namespace);
   }
 
   createLoggers() {
