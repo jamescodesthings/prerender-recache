@@ -77,6 +77,13 @@ class PrerenderRecache {
 
   }
 
+  sendRecacheRequest() {
+    // {
+    //   "prerenderToken": "YOUR_TOKEN",
+    //   "url": "http://www.example.com/url/to/recache"
+    // }
+  }
+
   registerShutdownListener() {
     utils.registerShutdownHandler((...args) => {this.shutdownListener(...args)})
   }
